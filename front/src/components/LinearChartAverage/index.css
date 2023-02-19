@@ -1,0 +1,23 @@
+.linearChart-Wrapper {
+    background: #ff0000;
+
+    min-width: 210px;
+    width: 30%;
+    max-width: 30%;
+    height: 263px;
+
+    height: 263px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.0212249);
+    border-radius: 5px;
+    position: relative;
+}
+.linearChart-title {
+    font-size: 15px;
+    color: #fff;
+    opacity: 0.5;
+    width: 150px;
+    line-height: 24px;
+    position: absolute;
+    top: 8%;
+    left: 8%;
+}

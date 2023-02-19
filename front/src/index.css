@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+:root {
+    /* color */
+    --background-nav: #020203;
+    --color-primary: #ffffff;
+    --tertiary-color: #74798c;
+    --color-name-data: #20253a;
+    --secondary-color: #ff0101;
+    --graph-primary: #e60000;
+    --graph-secondary: #282d30;
+    --graph-tertiary: #20253a;
+    --background-color: #fbfbfb;
+    /* --background-color: #ddcdcd; */
+
+    /* font */
+    --font: 'Roboto', sans-serif;
+    --default-font: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
+        'Lucida Sans', Arial, sans-serif;
+    --size: 12px;
+}
+
+body {
+    font-family: var(--font, var(--default-font));
+    font-size: var(--size);
+    font-weight: 500;
+    background: var(--color-primary);
+}
+a {
+    text-decoration: none;
+    color: white
+    
+}
+
+a.active {
+    color:#e60000
+}
