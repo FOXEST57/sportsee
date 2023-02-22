@@ -9,7 +9,7 @@ import './index.css'
  * @prop {String} name   - fisrtName for the user
  * @returns  {React.ReactElement}
  */
-export function Banner({ name }) {
+export function Banner({ name, dataMocked }) {
     const message = [
         'Félicitation ! Vous avez explosé vos objectifs hier 👏',
         'Super ! Vous êtes en excellente forme  🔥',
@@ -17,7 +17,10 @@ export function Banner({ name }) {
     return (
         <section className="banner-wrapper">
             <h1 className="banner-title">
-                Bonjour <span>{name}</span>
+                Bonjour{' '}
+                <span>
+                    {name} {dataMocked ? 'Mock' : ''}
+                </span>
             </h1>
             <p className="banner-text">{message[random(0, 1)]}</p>
         </section>
@@ -25,4 +28,5 @@ export function Banner({ name }) {
 }
 Banner.propTypes = {
     name: PropTypes.string,
+    dataMocked: PropTypes.bool,
 }

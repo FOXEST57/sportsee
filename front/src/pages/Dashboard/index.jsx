@@ -9,6 +9,7 @@ import LayoutVertical from '../../components/LayoutVertical'
 import Loader from '../../components/Loader'
 import { getUser } from '../../Services/Api/getUser'
 import { getActivity } from '../../Services/Api/getActivity'
+import { getServer } from '../../Services/Api/getServer'
 import { getAverages } from '../../Services/Api/getAverages'
 import { getPerf } from '../../Services/Api/getPerf'
 import { Banner } from '../../components/Banner'
@@ -29,12 +30,13 @@ function Dashboard() {
     const [perf, setPerf] = useState(null)
     const [error, setError] = useState(false)
     const [isLoading, setLoading] = useState(true)
-
+    const [dataMocked, setDataMocked] = useState(true)
     useEffect(() => {
-        getUser(setUser, setError, setLoading, userId)
-        getActivity(setActivity, setError, setLoading, userId)
-        getAverages(setAverage, setError, setLoading, userId)
-        getPerf(setPerf, setError, setLoading, userId)
+        getServer(setError, setLoading, setDataMocked)
+        getUser(setUser, setError, setLoading, userId, dataMocked)
+        getActivity(setActivity, setError, setLoading, userId, dataMocked)
+        getAverages(setAverage, setError, setLoading, userId, dataMocked)
+        getPerf(setPerf, setError, setLoading, userId, dataMocked)
     }, [userId])
 
     return (
@@ -47,7 +49,10 @@ function Dashboard() {
                 ) : user && activity && average && perf ? (
                     <div className="container-user">
                         <section className="user-banner">
-                            <Banner name={user.firstName} />
+                            <Banner
+                                name={user.firstName}
+                                dataMocked={dataMocked}
+                            />
                         </section>
                         <section className="user-infos">
                             <div className="infos-graph">

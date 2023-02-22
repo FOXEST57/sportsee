@@ -45,6 +45,10 @@ router.get('/user/:id/performance', (req, res) => {
 
     return handleNoUserData(res, userData)
 })
+router.get('/', (req, res) => {
 
+
+    return handleNoUserData(res, 'OK')
+})
 
 module.exports = router

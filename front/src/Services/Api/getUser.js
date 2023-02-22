@@ -4,7 +4,7 @@
 
 import { User } from '../../Models/User'
 import { reshapeUser } from './reshape'
-import { dataMocked, pathApi } from './settings'
+import { pathApi } from './settings'
 
 /**
  * Call Api  for endpoint user profil
@@ -12,10 +12,17 @@ import { dataMocked, pathApi } from './settings'
  * @param {function} setError  - state which handles errors on the call Api
  * @param {function} setLoading - state which manages call loads Api
  * @param {String} userId  - id of the user retrieved on url
+ * @param {Boolean} dataMocked  - id of the user retrieved on url
  * @returns {Promise.<void>} void
  */
 
-export async function getUser(setUser, setError, setLoading, userId) {
+export async function getUser(
+    setUser,
+    setError,
+    setLoading,
+    userId,
+    dataMocked
+) {
     let url = ''
     if (dataMocked) {
         url = '../data/mockdata.json'

@@ -5,7 +5,7 @@
 
 import { Activity } from '../../Models/Activity'
 import { reshapeActivity } from './reshape'
-import { dataMocked, pathApi } from './settings'
+import { pathApi } from './settings'
 
 /**
  * Call Api  for endpoint activity
@@ -15,7 +15,13 @@ import { dataMocked, pathApi } from './settings'
  * @param {String} userId  - id of the user retrieved on url
  * @returns {Promise.<void>} void
  */
-export async function getActivity(setActivity, setError, setLoading, userId) {
+export async function getActivity(
+    setActivity,
+    setError,
+    setLoading,
+    userId,
+    dataMocked
+) {
     let url = ''
     if (dataMocked) {
         url = '../data/mockdata.json'

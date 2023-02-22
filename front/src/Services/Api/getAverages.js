@@ -3,7 +3,7 @@
  */
 import { Average } from '../../Models/Average'
 import { reshapeAverage } from './reshape'
-import { dataMocked, pathApi } from './settings'
+import { pathApi } from './settings'
 
 /**
  * Call Api  for endpoint average-session
@@ -14,7 +14,13 @@ import { dataMocked, pathApi } from './settings'
  * @returns {Promise.<void>} void
  */
 
-export async function getAverages(setAverages, setError, setLoading, userId) {
+export async function getAverages(
+    setAverages,
+    setError,
+    setLoading,
+    userId,
+    dataMocked
+) {
     let url = ''
     if (dataMocked) {
         url = '../data/mockdata.json'

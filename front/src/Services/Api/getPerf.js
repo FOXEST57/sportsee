@@ -4,7 +4,7 @@
 
 import { Perf } from '../../Models/Perf'
 import { reshapePerf } from './reshape'
-import { dataMocked, pathApi } from './settings'
+import { pathApi } from './settings'
 
 /**
  * Call Api  for endpoint performance
@@ -14,7 +14,13 @@ import { dataMocked, pathApi } from './settings'
  * @param {String} userId  - id of the user retrieved on url
  * @returns {Promise.<Void>} void
  */
-export async function getPerf(setPerf, setError, setLoading, userId) {
+export async function getPerf(
+    setPerf,
+    setError,
+    setLoading,
+    userId,
+    dataMocked
+) {
     let url = ''
     if (dataMocked) {
         url = '../data/mockdata.json'
