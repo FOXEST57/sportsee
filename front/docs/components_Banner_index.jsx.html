@@ -37,7 +37,7 @@ import './index.css'
  * @prop {String} name   - fisrtName for the user
  * @returns  {React.ReactElement}
  */
-export function Banner({ name }) {
+export function Banner({ name, dataMocked }) {
     const message = [
         'Félicitation ! Vous avez explosé vos objectifs hier 👏',
         'Super ! Vous êtes en excellente forme  🔥',
@@ -45,7 +45,10 @@ export function Banner({ name }) {
     return (
         &lt;section className="banner-wrapper">
             &lt;h1 className="banner-title">
-                Bonjour &lt;span>{name}&lt;/span>
+                Bonjour{' '}
+                &lt;span>
+                    {name} {dataMocked ? 'Mock' : ''}
+                &lt;/span>
             &lt;/h1>
             &lt;p className="banner-text">{message[random(0, 1)]}&lt;/p>
         &lt;/section>
@@ -53,6 +56,7 @@ export function Banner({ name }) {
 }
 Banner.propTypes = {
     name: PropTypes.string,
+    dataMocked: PropTypes.bool,
 }
 </code></pre>
         </article>
@@ -64,13 +68,13 @@ Banner.propTypes = {
 </div>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="Activity.html">Activity</a></li><li><a href="Average.html">Average</a></li><li><a href="Perf.html">Perf</a></li><li><a href="User.html">User</a></li></ul><h3>Global</h3><ul><li><a href="global.html#App">App</a></li><li><a href="global.html#Banner">Banner</a></li><li><a href="global.html#BarChartSession">BarChartSession</a></li><li><a href="global.html#CustomToolTipBar">CustomToolTipBar</a></li><li><a href="global.html#CustomTooltipLinear">CustomTooltipLinear</a></li><li><a href="global.html#Error">Error</a></li><li><a href="global.html#Header">Header</a></li><li><a href="global.html#Home">Home</a></li><li><a href="global.html#LayoutVertical">LayoutVertical</a></li><li><a href="global.html#LinearChartAverage">LinearChartAverage</a></li><li><a href="global.html#Loader">Loader</a></li><li><a href="global.html#RadarChartPerf">RadarChartPerf</a></li><li><a href="global.html#RadialChartScore">RadialChartScore</a></li><li><a href="global.html#UserInfos">UserInfos</a></li><li><a href="global.html#dataMocked">dataMocked</a></li><li><a href="global.html#getActivity">getActivity</a></li><li><a href="global.html#getAverages">getAverages</a></li><li><a href="global.html#getPerf">getPerf</a></li><li><a href="global.html#getUser">getUser</a></li><li><a href="global.html#pathApi">pathApi</a></li><li><a href="global.html#randomfordelivratecustommessageinthecomponentBanner">random for delivrate custom message in the component Banner</a></li><li><a href="global.html#renderColorfulLegendText">renderColorfulLegendText</a></li><li><a href="global.html#reshapeActivitydefinethepathtothedata">reshapeActivity  define the path to the data</a></li><li><a href="global.html#reshapeAveragedefinethepathtothedata">reshapeAverage  define the path to the data</a></li><li><a href="global.html#reshapePerfdefinethepathtothedata">reshapePerf  define the path to the data</a></li><li><a href="global.html#reshapeUserdefinethepathtothedata">reshapeUser  define the path to the data</a></li><li><a href="global.html#useFetch">useFetch</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="Activity.html">Activity</a></li><li><a href="Average.html">Average</a></li><li><a href="Perf.html">Perf</a></li><li><a href="User.html">User</a></li></ul><h3>Global</h3><ul><li><a href="global.html#App">App</a></li><li><a href="global.html#Banner">Banner</a></li><li><a href="global.html#BarChartSession">BarChartSession</a></li><li><a href="global.html#CustomToolTipBar">CustomToolTipBar</a></li><li><a href="global.html#CustomTooltipLinear">CustomTooltipLinear</a></li><li><a href="global.html#Dashboard">Dashboard</a></li><li><a href="global.html#Error">Error</a></li><li><a href="global.html#Header">Header</a></li><li><a href="global.html#Home">Home</a></li><li><a href="global.html#LayoutVertical">LayoutVertical</a></li><li><a href="global.html#LinearChartAverage">LinearChartAverage</a></li><li><a href="global.html#Loader">Loader</a></li><li><a href="global.html#Profil">Profil</a></li><li><a href="global.html#RadarChartPerf">RadarChartPerf</a></li><li><a href="global.html#RadialChartScore">RadialChartScore</a></li><li><a href="global.html#UserInfos">UserInfos</a></li><li><a href="global.html#getActivity">getActivity</a></li><li><a href="global.html#getAverages">getAverages</a></li><li><a href="global.html#getPerf">getPerf</a></li><li><a href="global.html#getServer">getServer</a></li><li><a href="global.html#getUser">getUser</a></li><li><a href="global.html#pathApi">pathApi</a></li><li><a href="global.html#randomfordelivratecustommessageinthecomponentBanner">random for delivrate custom message in the component Banner</a></li><li><a href="global.html#renderColorfulLegendText">renderColorfulLegendText</a></li><li><a href="global.html#reshapeActivitydefinethepathtothedata">reshapeActivity  define the path to the data</a></li><li><a href="global.html#reshapeAveragedefinethepathtothedata">reshapeAverage  define the path to the data</a></li><li><a href="global.html#reshapePerfdefinethepathtothedata">reshapePerf  define the path to the data</a></li><li><a href="global.html#reshapeUserdefinethepathtothedata">reshapeUser  define the path to the data</a></li><li><a href="global.html#useFetch">useFetch</a></li></ul>
 </nav>
 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.0</a> on Tue Feb 21 2023 16:15:44 GMT+0100 (heure normale d’Europe centrale)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.0</a> on Thu Feb 23 2023 16:17:47 GMT+0100 (heure normale d’Europe centrale)
 </footer>
 
 <script> prettyPrint(); </script>

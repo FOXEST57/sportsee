@@ -21,8 +21,13 @@ import RadarChartPerf from '../../components/RadarChartPerf'
 import RadialChartScore from '../../components/RadialChartScore'
 import Error from '../../components/Error'
 import React from 'react'
-
-function Dashboard() {
+import PropTypes from 'prop-types'
+/**
+ * Dashboard page
+ * @param {Boolean} dataMocked - if fetch on mock or api
+ * @returns  {JsxElement}
+ */
+function Dashboard({ dataMocked }) {
     const { userId } = useParams()
     const [user, setUser] = useState(null)
     const [activity, setActivity] = useState([])
@@ -30,9 +35,7 @@ function Dashboard() {
     const [perf, setPerf] = useState(null)
     const [error, setError] = useState(false)
     const [isLoading, setLoading] = useState(true)
-    const [dataMocked, setDataMocked] = useState(true)
     useEffect(() => {
-        getServer(setError, setLoading, setDataMocked)
         getUser(setUser, setError, setLoading, userId, dataMocked)
         getActivity(setActivity, setError, setLoading, userId, dataMocked)
         getAverages(setAverage, setError, setLoading, userId, dataMocked)
@@ -90,5 +93,9 @@ function Dashboard() {
             </div>
         </section>
     )
+}
+
+Dashboard.propTypes = {
+    dataMocked: PropTypes.bool,
 }
 export default Dashboard

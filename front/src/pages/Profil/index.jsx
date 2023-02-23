@@ -1,13 +1,18 @@
 /**
  *Page only for checking if data is mocked or not
  */
-import { dataMocked } from '../../Services/Api/settings'
 import Header from '../../components/Header'
 import LayoutVertical from '../../components/LayoutVertical'
 import './index.css'
 import { Link, useParams } from 'react-router-dom'
+import PropTypes from 'prop-types'
 
-function Profil() {
+/**
+ * Profil page
+ * @param {Boolean} dataMocked - if fetch on mock or api
+ * @returns  {JsxElement}
+ */
+function Profil({ dataMocked }) {
     const { userId } = useParams()
     return (
         <div className="profil-Wrapper">
@@ -35,5 +40,9 @@ function Profil() {
             )}
         </div>
     )
+}
+
+Profil.propTypes = {
+    dataMocked: PropTypes.bool,
 }
 export default Profil

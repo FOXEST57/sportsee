@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Source: Models/User.js</title>
+    <title>JSDoc: Source: pages/Profil/index.jsx</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Source: Models/User.js</h1>
+    <h1 class="page-title">Source: pages/Profil/index.jsx</h1>
 
     
 
@@ -27,66 +27,53 @@
     <section>
         <article>
             <pre class="prettyprint source linenums"><code>/**
- * Represents the User with formated data
- * @class Create formated data of user profil
+ *Page only for checking if data is mocked or not
  */
+import Header from '../../components/Header'
+import LayoutVertical from '../../components/LayoutVertical'
+import './index.css'
+import { Link, useParams } from 'react-router-dom'
+import PropTypes from 'prop-types'
 
-export class User {
-    /**
-     * @constructor
-     * @param {Object} data  data of users in API
-     * @param {String} data.firstname
-     * @param {Object} data.keyData
-     * @param {number} data.keyData.calorieCount
-     * @param {number} data.keyData.proteinCount
-     * @param {number} data.keyData.carbohydrateCount
-     * @param {number} data.keyData.lipidCount
-     * @param {number} data.calories
-     * @param {number} data.proteines
-     * @param {number} data.lipides
-     * @param {number} data.glucides
-     * @param {number} data.score
-     */
-    constructor(data) {
-        this._firstName = data.firstname
-        this._keyData = data.keyData
-        this._calories = data.calories
-        this._proteines = data.proteines
-        this._glucides = data.glucides
-        this._lipides = data.lipides
-        this._score = data.score
-    }
-
-    get firstName() {
-        const name = this._firstName[0].toUpperCase() + this._firstName.slice(1)
-        return name
-    }
-    get keyData() {
-        return this._keyData
-    }
-
-    get calories() {
-        return `${this._calories}kCal`
-    }
-    get proteines() {
-        return `${this._proteines}g`
-    }
-    get glucides() {
-        return `${this._glucides}g`
-    }
-    get lipides() {
-        return `${this._lipides}g`
-    }
-    /**
-     * @property {function} score Create object containing value score in percent and color
-     * @return {Array.&lt;Object>}
-     */
-    get score() {
-        const tab = []
-        tab.push({ score: this._score * 100, fill: '#FF0000' })
-        return tab
-    }
+/**
+ * Profil page
+ * @param {Boolean} dataMocked - if fetch on mock or api
+ * @returns  {JsxElement}
+ */
+function Profil({ dataMocked }) {
+    const { userId } = useParams()
+    return (
+        &lt;div className="profil-Wrapper">
+            &lt;Header />
+            {dataMocked ? (
+                &lt;div className="profil-container">
+                    &lt;LayoutVertical />
+                    &lt;div className="profil-info">
+                        &lt;h2>les datas proviennent du mock &lt;/h2>
+                        &lt;Link to={`/dashboard/${userId}`}>
+                            Retour au dashboard
+                        &lt;/Link>
+                    &lt;/div>
+                &lt;/div>
+            ) : (
+                &lt;div className="profil-container">
+                    &lt;LayoutVertical />
+                    &lt;div className="profil-info">
+                        &lt;h2>les datas proviennent de la micro Api &lt;/h2>
+                        &lt;Link to={`/dashboard/${userId}`}>
+                            Retour au dashboard
+                        &lt;/Link>
+                    &lt;/div>
+                &lt;/div>
+            )}
+        &lt;/div>
+    )
 }
+
+Profil.propTypes = {
+    dataMocked: PropTypes.bool,
+}
+export default Profil
 </code></pre>
         </article>
     </section>

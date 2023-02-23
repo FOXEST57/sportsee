@@ -1,10 +1,4 @@
 // @ts-check
-/**
- *  Setting for fetch data (../data/mockdata.json) or api (http://localhost:5000/)
- * @constant
- * @type {boolean}
- */
-export const dataMocked = true
 
 /**
  *  Path  url to connect Api
