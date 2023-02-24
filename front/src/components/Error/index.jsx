@@ -12,6 +12,7 @@ import React from 'react'
  * @returns {React.ReactElement}
  */
 function Error({ title, message }) {
+    // eslint-disable-next-line
     let location = useLocation()
     return (
         <div className="error-Wrapper">
