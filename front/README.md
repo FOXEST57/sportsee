@@ -27,9 +27,9 @@ Then run the application in development mode with the <code>yarn start</code> co
 
 ### 2/ Front-end
 
-You must execute the <code>yarn start</code> command on the terminal to launch the opening of the home page.
+You must execute the <code>npm run start</code> command on the terminal to launch the opening of the home page.
 
-This allows you to select the type of data (API or Mock) and the user.
+This allows you to select the user and automatically the data if the server is connected the data will come from API otherwise we display the Mock data.
 When you select a user, you are directed to their profile page.
 
 ## Prerequisites
