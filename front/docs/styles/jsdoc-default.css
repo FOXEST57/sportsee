@@ -78,6 +78,11 @@ article dl {
     margin-bottom: 40px;
 }
 
+article h1 {
+    margin: 12px 0px 40px;
+}
+
+
 article img {
   max-width: 100%;
 }
