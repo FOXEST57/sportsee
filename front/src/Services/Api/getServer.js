@@ -17,7 +17,6 @@ export async function getServer(setDataMocked) {
     }
     try {
         const response = await fetch(pathApi, fetchOptions)
-        console.log(response.ok)
         if (response.ok) {
             setDataMocked(false)
         }
