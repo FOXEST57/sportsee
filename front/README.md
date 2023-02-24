@@ -7,7 +7,7 @@
 ![REACT](https://img.shields.io/badge/React-303540?style=for-the-badge&logo=react&logoColor=61DAFB)
 ![Recharts](https://img.shields.io/badge/<Recharts%20/>-22b5bf?style=for-the-badge&logo=recharts&logoColor=white)
 
-# Author-Pascal DEBAILLEUL
+## Author-Pascal DEBAILLEUL
 
 
 ## Presentation
