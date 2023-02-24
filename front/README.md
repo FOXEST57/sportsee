@@ -23,7 +23,7 @@ It allows the user to track daily progress (weight, number of calories burned, e
 You must first fork and clone the backend at the following address:
 https://github.com/OpenClassrooms-Student-Center/P9-front-end-dashboard
 
-Then run the application in development mode with the <code>yarn start</code> command on the terminal which opens the port: [http://localhost:5000](http://localhost:5000).
+Then run the application in development mode with the <code>npm start</code> command on the terminal which opens the port: [http://localhost:5000](http://localhost:5000).
 
 ### 2/ Front-end
 
